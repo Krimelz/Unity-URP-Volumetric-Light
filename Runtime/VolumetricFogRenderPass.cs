@@ -455,10 +455,10 @@ public sealed class VolumetricFogRenderPass : ScriptableRenderPass
 
 		cameraTargetDescriptor.width /= (int)DownsampleFactor.Half;
 		cameraTargetDescriptor.height /= (int)DownsampleFactor.Half;
-		cameraTargetDescriptor.graphicsFormat = GraphicsFormat.R32_SFloat;
+		cameraTargetDescriptor.graphicsFormat = GraphicsFormat.R8G8B8A8_SRGB;
 		downsampledCameraDepthTarget = UniversalRenderer.CreateRenderGraphTexture(renderGraph, cameraTargetDescriptor, DownsampledCameraDepthRTName, false);
 
-		cameraTargetDescriptor.colorFormat = RenderTextureFormat.ARGBHalf;
+		cameraTargetDescriptor.colorFormat = RenderTextureFormat.ARGB32;
 		volumetricFogRenderTarget = UniversalRenderer.CreateRenderGraphTexture(renderGraph, cameraTargetDescriptor, VolumetricFogRenderRTName, false);
 		volumetricFogBlurRenderTarget = UniversalRenderer.CreateRenderGraphTexture(renderGraph, cameraTargetDescriptor, VolumetricFogBlurRTName, false);
 
